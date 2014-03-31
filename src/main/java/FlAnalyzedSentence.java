@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 
-package cat.tv3.eng.rec.analyzed.fl.sentence;
+package cat.tv3.eng.rec.fl.analyzed.sentence;
 
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ import java.util.ArrayList;
  */
 
 
-public class AnalyzedFLSentence {
+public class FlAnalyzedSentence {
 	private ArrayList<String> originalTokens;
 	private ArrayList<ArrayList<String>> morfologicTokens;
 	private ArrayList<ArrayList<String>> poSTaggedTokens;
@@ -46,7 +46,7 @@ public class AnalyzedFLSentence {
 	
 	
 	
-	public AnalyzedFLSentence(String outputFreeling){
+	public FlAnalyzedSentence(String outputFreeling){
 		originalTokens = new ArrayList<String>();
 		morfologicTokens = new ArrayList<ArrayList<String>>();
 		poSTaggedTokens = new ArrayList<ArrayList<String>>();

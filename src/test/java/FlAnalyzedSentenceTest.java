@@ -14,32 +14,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package cat.tv3.eng.rec.analyzed.fl.sentence.test;
+package cat.tv3.eng.rec.fl.analyzed.sentence.test;
 
 
 import java.io.InputStream;
 import java.util.Scanner;
 
-import cat.tv3.eng.rec.analyzed.fl.sentence.AnalyzedFLSentence;
+import cat.tv3.eng.rec.fl.analyzed.sentence.FlAnalyzedSentence;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 
-public class AnalyzedFLSentenceTest {
+public class FlAnalyzedSentenceTest {
 	
 	private final static String FREELING_OUTPUT = "freeling_out.txt";
 	private static String outputFreeling;
-	private static AnalyzedFLSentence analizedFreelingSentence;
+	private static FlAnalyzedSentence analizedFreelingSentence;
 	
 	@BeforeClass
 	public static void prepareFile(){
 		outputFreeling = "";
-		InputStream is = AnalyzedFLSentence.class.getClassLoader().getResourceAsStream(FREELING_OUTPUT);
+		InputStream is = FlAnalyzedSentence.class.getClassLoader().getResourceAsStream(FREELING_OUTPUT);
 		outputFreeling = new Scanner(is,"UTF-8").useDelimiter("\\A").next();
 		
-		analizedFreelingSentence = new AnalyzedFLSentence(outputFreeling);		
+		analizedFreelingSentence = new FlAnalyzedSentence(outputFreeling);		
 		
 	}
 	
