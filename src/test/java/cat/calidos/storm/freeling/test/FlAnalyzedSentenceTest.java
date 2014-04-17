@@ -14,13 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package cat.tv3.eng.rec.fl.analyzed.sentence.test;
+package cat.calidos.storm.freeling.test;
 
 
 import java.io.InputStream;
 import java.util.Scanner;
 
-import cat.tv3.eng.rec.fl.analyzed.sentence.FlAnalyzedSentence;
+import cat.calidos.storm.freeling.FlAnalyzedSentence.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
