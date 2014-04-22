@@ -14,9 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
-package cat.tv3.eng.rec.fl.analyzed.sentence;
-
+package cat.calidos.storm.freeling.FlAnalyzedSentence;
 
 import java.util.ArrayList;
 
@@ -32,7 +30,6 @@ import java.util.ArrayList;
  * 
  * @author jaume jané
  */
-
 
 public class FlAnalyzedSentence {
 	private ArrayList<String> originalTokens;
@@ -150,15 +147,21 @@ public class FlAnalyzedSentence {
 	public String getMorfologicText(){
 		try{
 			String result = "";
-			for(int i=0; i<morfologicTokens.size();++i){
-				if(i==0) result=morfologicTokens.get(i).get(0);			
+			for(int i=0; i<morfologicTokens.size();++i){				
+				if(i==0) {
+					if(morfologicTokens.get(i).size()>0) {
+						result=morfologicTokens.get(i).get(0);
+					}					
+				}
 				else{
-					result+=" "+morfologicTokens.get(i).get(0);
+					if(morfologicTokens.get(i).size() > 0) {					
+					  result+=" "+morfologicTokens.get(i).get(0);
+					}					
 				}
 			}	
 			return result;
 		}catch (IndexOutOfBoundsException e ) {
-			return "Not";
+			return this.getOriginalText();
 				
       	}
 		
