@@ -17,6 +17,7 @@ limitations under the License.
 package cat.calidos.storm.freeling.FlAnalyzedSentence;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -41,6 +42,8 @@ public class FlAnalyzedSentence {
 	private static int TOKEN_TAGGED = 2;
 	private static int TOKEN_PROBS = 0;
 	
+	public FlAnalyzedSentence(){
+    }
 	
 	
 	public FlAnalyzedSentence(String outputFreeling){
@@ -165,6 +168,19 @@ public class FlAnalyzedSentence {
 				
       	}
 		
+	}
+	
+	public List<String> getListStringMorfologicText(){
+		 		
+		List<String> result = new ArrayList<String>();
+		for(int i=0; i<morfologicTokens.size();++i){				
+		 	if(morfologicTokens.get(i).size()>0) {
+				result.add(morfologicTokens.get(i).get(0));
+			}					
+		 							
+		}	
+		return result;		
+		 		
 	}
 	
 	public String getPoSTaggedText(){
