@@ -1,5 +1,6 @@
 /**
- Copyright 2014 Jaume Jané
+ Copyright 2014 Daniel Giribet <dani - calidos.cat>
+ Copyright 2014 Jaume Janï¿½
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
