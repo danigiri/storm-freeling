@@ -1,5 +1,5 @@
 /**
-Copyright 2014 Jaume Jané 
+Copyright 2014 Jaume Janï¿½ 
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package cat.calidos.storm.freeling.FlAnalyzedSentence;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.Serializable;
 
 /**
  * A Object that manage the output of freeling.
@@ -29,10 +29,10 @@ import java.util.List;
  * 		- MORFO
  * 		- TAGGED 
  * 
- * @author jaume jané
+ * @author jaume janï¿½
  */
 
-public class FlAnalyzedSentence {
+public class FlAnalyzedSentence implements Serializable {
 	private ArrayList<String> originalTokens;
 	private ArrayList<ArrayList<String>> morfologicTokens;
 	private ArrayList<ArrayList<String>> poSTaggedTokens;

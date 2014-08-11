@@ -44,7 +44,7 @@ public class FreelingBolt extends SocketBolt {
 
 	
 	public void handleEmit(FlAnalyzedSentence message) {		
-		LOG.info("handleEmitMorfo: message="+message.getMorfologicText());			
+		//LOG.info("handleEmitMorfo: message="+message.getMorfologicText());			
 		_collector.emit(new Values(message));			
 	}
 	
