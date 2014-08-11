@@ -1,5 +1,6 @@
 /**
-Copyright 2014 Jaume Jané 
+Copyright 2014 Daniel Giribet <dani - calidos.cat>
+Copyright 2014 Jaume Janï¿½ 
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -26,7 +27,8 @@ import org.jboss.netty.handler.codec.frame.Delimiters;
 
 
 public  class FreelingPipelineFactory  implements ChannelPipelineFactory{
-	private static final int	DEFAULT_FRAME_SIZE	= 16384;
+	//private static final int	DEFAULT_FRAME_SIZE	= 16384;
+	private static final int	DEFAULT_FRAME_SIZE	= 16384*15;
 
 	private static final StringFreelingDecoder	_stringFreelingDecoder = new StringFreelingDecoder();	// shareable
 	private static final StringFreelingEncoder	_stringFreelingEncoder = new StringFreelingEncoder();	// shareable
@@ -46,7 +48,7 @@ public  class FreelingPipelineFactory  implements ChannelPipelineFactory{
 	        		 					stripDelimiter, 
 	        		 					Delimiters.nulDelimiter())); 
 		pipeline.addLast("decoder", _stringFreelingDecoder);	
-		pipeline.addLast("encoder", _stringFreelingEncoder);    
+		pipeline.addLast("encoder", _stringFreelingEncoder);  // encode to freeling  
 	    pipeline.addLast("handler", new MultiLineBasedClientHandler(_socketBolt)); 
   
 	    return pipeline;

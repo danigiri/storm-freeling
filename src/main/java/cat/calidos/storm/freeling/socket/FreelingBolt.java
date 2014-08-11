@@ -1,5 +1,6 @@
 /**
- Copyright 2014 Jaume Jané
+ Copyright 2014 Daniel Giribet <dani - calidos.cat>
+ Copyright 2014 Jaume Janï¿½
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -23,6 +24,8 @@ import org.jboss.netty.channel.ChannelPipelineFactory;
 import backtype.storm.tuple.Values;
 import cat.calidos.storm.freeling.FlAnalyzedSentence.FlAnalyzedSentence;
 import cat.calidos.storm.task.SocketBolt;
+import backtype.storm.topology.OutputFieldsDeclarer;
+import backtype.storm.tuple.Fields;
 
 public class FreelingBolt extends SocketBolt {
 	
@@ -41,8 +44,15 @@ public class FreelingBolt extends SocketBolt {
 
 	
 	public void handleEmit(FlAnalyzedSentence message) {		
-		LOG.info("handleEmitMorfo: message="+message.getMorfologicText());			
+		//LOG.info("handleEmitMorfo: message="+message.getMorfologicText());			
 		_collector.emit(new Values(message));			
 	}
+	
+	@Override
+ 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
+		declarer.declare(new Fields("FlAnalyzedSentence"));
+	}
+ 	
+ 
 	
 }

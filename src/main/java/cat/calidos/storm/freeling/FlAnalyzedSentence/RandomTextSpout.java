@@ -66,6 +66,6 @@ public class RandomTextSpout extends BaseRichSpout{
 
     
     public void declareOutputFields(OutputFieldsDeclarer declarer) {       
-        declarer.declare(new Fields("frase")); 
+        declarer.declare(new Fields("text")); 
 	}
 }
